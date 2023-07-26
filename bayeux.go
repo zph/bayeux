@@ -163,7 +163,7 @@ func (b *Bayeux) subscribe(topic string, replay Replay) Subscription {
 								"subscription": "/topic/%s",
 								"clientId": "%s",
 								"ext": {
-									"replay": {"/topic/%s": "%d"}
+									"replay": {"/topic/%s": %d}
 									}
 								}`, topic, b.id.clientID, topic, replay)
 	resp, err := b.call(handshake, b.creds.bayeuxUrl())
